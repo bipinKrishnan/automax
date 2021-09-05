@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 import os 
-from functools import partial
+from json import JSONDecodeError
 
 def show_plots(
     col,
@@ -29,9 +29,12 @@ def show_plots(
             except FileNotFoundError:
                 st.error(f"No cache found for {selected_ipynb}")
 
+            # TODO: pipe all other stderr to streamlit interface
+
 def display_ipynb_plots():
     cwd = os.getcwd()
     dir_name = 'experiments'
+    deafult_option = 'None'
     col1, col2 = st.columns([1, 3])
 
     ipynb_files = [dir for dir in os.listdir(dir_name) if dir.split('.')[-1]=='ipynb']
@@ -40,21 +43,22 @@ def display_ipynb_plots():
         with col1:
             selected_ipynb = st.selectbox(
                     label="Select ipynb files to view plots",
-                    options=ipynb_files
+                    options=[deafult_option]+ipynb_files
                 )
+            load_cache = st.checkbox("Load from cache", value=True)
 
-            if selected_ipynb:
-                load_cache = st.checkbox("Load from cache", value=True)
-                st.button(
-                    'Show plots',
-                    on_click=partial(
-                        show_plots,
+            if selected_ipynb!=deafult_option:
+                show_plots(
                         col=col2,
                         dir_name=dir_name, 
                         selected_ipynb=selected_ipynb,
                         load_cache=load_cache
-                    )
-                )  
+                )
+            else:
+                with col2:
+                    st.info(
+                        "All the plots inside the selected Jupyter notebook will be displayed here"
+                        )
             
     else:
         st.error("⚠️ No Jypter notebooks 📓 found in experiments folder")
