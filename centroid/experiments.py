@@ -1,9 +1,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-import os 
-
-from utils import st_stderr
+import os
 
 def show_plots(
     col,
@@ -15,12 +13,12 @@ def show_plots(
             ipynb_path = os.path.join(dir_name, selected_ipynb)
             html_name = selected_ipynb.split('.')[0]
 
-            if not load_cache:
-                os.system(
-                    f"jupyter nbconvert --to html --no-input {ipynb_path} --output {html_name}.html"
-                    )
+            try:
+                if not load_cache:
+                    os.system(
+                        f"jupyter nbconvert --to html --no-input {ipynb_path} --output {html_name}.html"
+                        )
 
-            try:        
                 with open(os.path.join(dir_name, f"{html_name}.html")) as f:
                     components.html(
                         f.read(),
@@ -28,9 +26,11 @@ def show_plots(
                         scrolling=True
                         )
             except Exception as e:
-                st.error(f"An error occured while fetching the plots from {selected_ipynb}")
                 if isinstance(e, FileNotFoundError) and load_cache:
                     st.error(f"No cache found for {selected_ipynb}")
+                else:
+                    st.error(f"An error occured while fetching the plots from {selected_ipynb}")
+                    st.code(e)
             # TODO: pipe all other stderr to streamlit interface
 
 def display_ipynb_plots():
