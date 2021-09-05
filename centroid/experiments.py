@@ -2,7 +2,8 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 import os 
-from json import JSONDecodeError
+
+from utils import st_stderr
 
 def show_plots(
     col,
@@ -26,9 +27,10 @@ def show_plots(
                         height=500,
                         scrolling=True
                         )
-            except FileNotFoundError:
-                st.error(f"No cache found for {selected_ipynb}")
-
+            except Exception as e:
+                st.error(f"An error occured while fetching the plots from {selected_ipynb}")
+                if isinstance(e, FileNotFoundError) and load_cache:
+                    st.error(f"No cache found for {selected_ipynb}")
             # TODO: pipe all other stderr to streamlit interface
 
 def display_ipynb_plots():
