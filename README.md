@@ -2,6 +2,6 @@
 Central dashboard for data scientists
 
 ## Usage
-```python3
+```bash
    python3 centroid <path_to_project> <project_name>
 ```
