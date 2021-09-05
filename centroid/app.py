@@ -25,7 +25,7 @@ if __name__ =="__main__":
         override_theme=over_theme
         )
 
-    if menu_id=='Home':
-        st.write("Back home")
+    if menu_id=="Home":
+        st.text("Back home")
     elif menu_id=="Experiments":
         display_ipynb_plots()

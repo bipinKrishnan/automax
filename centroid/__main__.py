@@ -15,7 +15,7 @@ def main(path_to_project, project_name):
     project_path = os.path.join(path_to_project, project_name)
     webapp_folder = "centroid_dashboard"
     webapp_main_file = 'app.py'
-    files_to_copy = ['app.py', 'experiments.py', 'utils.py']
+    files_to_copy = ['app.py', 'experiments.py']
     webapp_dst_path = os.path.join(project_path, webapp_folder)
 
     folders = ['experiments', 'src']
