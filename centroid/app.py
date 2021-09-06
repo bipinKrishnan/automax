@@ -1,6 +1,7 @@
 import streamlit as st
 import hydralit_components as hc
 
+from home import home
 from experiments import display_ipynb_plots
 
 if __name__ =="__main__":
@@ -26,6 +27,6 @@ if __name__ =="__main__":
         )
 
     if menu_id=="Home":
-        st.text("Back home")
+        home()
     elif menu_id=="Experiments":
         display_ipynb_plots()

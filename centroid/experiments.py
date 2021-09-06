@@ -30,7 +30,6 @@ def show_plots(
                     st.error(f"No cache found for {selected_ipynb}")
                 else:
                     st.error(f"An error occured while fetching the plots from {selected_ipynb}")
-                    st.code(e)
             # TODO: pipe all other stderr to streamlit interface
 
 def display_ipynb_plots():
