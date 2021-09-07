@@ -2,20 +2,14 @@ from typer import run
 import os
 from shutil import copyfile
 
-def create_folder(folder_path, folder_name):
-    complete_path = os.path.join(folder_path, folder_name)
-    os.makedirs(complete_path, exist_ok=True)
-
-def create_file(file_path, file_name):
-    complete_path = os.path.join(file_path, file_name)
-    open(complete_path, 'w').close()
+from utils import create_folder, create_file
 
 
 def main(path_to_project, project_name):
     project_path = os.path.join(path_to_project, project_name)
     webapp_folder = "centroid_dashboard"
     webapp_main_file = 'app.py'
-    files_to_copy = ['app.py', 'home.py', 'experiments.py']
+    files_to_copy = ['app.py', 'home.py', 'experiments.py', 'utils.py']
     webapp_dst_path = os.path.join(project_path, webapp_folder)
 
     folders = ['experiments', 'src', 'tests']

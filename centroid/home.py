@@ -1,5 +1,8 @@
 import streamlit as st
 import os
+from functools import partial
+
+from utils import create_file
 
 
 def home():
@@ -34,9 +37,19 @@ def home():
             st.write(content_info['label'])
             with st.expander(label="Add files"):
                 file_name = st.text_input(
-                                label=content_info['text_input'],
+                                label=content_info['text_input']
                                 )
+
+                if file_name:
+                    if os.path.exists(os.path.join(key, file_name)):
+                        st.markdown(f"File **{file_name}** exists")
+                    else:
+                        create_file(key, file_name)
+                        st.markdown(f"Created **{file_name}**")
+
             # TODO: clear text input when enter key is pressed
+            st.markdown(f"ℹ️ Only ** *.{content_info['ext']}** files are shown")
             for f in files:
-                st.text(f)
+                st.write(f"[{f}](google.com)")
+    
     
