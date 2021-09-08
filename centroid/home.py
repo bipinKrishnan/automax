@@ -3,7 +3,6 @@ import os
 from functools import partial
 
 from utils import create_file
-from random import randint
 
 
 def home():
@@ -54,5 +53,5 @@ def home():
 
             # TODO: clear text input when enter key is pressed
             files_to_open = st.multiselect(content_info['heading'], files)
-            st.button('Open', key=str(randint(1, 1000)))
+            st.button('Open', key=str(i))
     
