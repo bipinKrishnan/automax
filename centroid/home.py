@@ -3,6 +3,7 @@ import os
 from functools import partial
 
 from utils import create_file
+from random import randint
 
 
 def home():
@@ -13,19 +14,22 @@ def home():
             'col': exp_col, 
             'label': 'Experiment notebooks 📓', 
             'ext': 'ipynb',
-            'text_input': 'Enter the notebook name(include .ipynb extension)'
+            'text_input': 'Enter the notebook name(include .ipynb extension)',
+            'heading': 'Select notebooks to open'
             },
         'src': {
             'col': src_col, 
             'label': 'Production code 🚢', 
             'ext': 'py',
-            'text_input': 'Enter the file name with extension'
+            'text_input': 'Enter the file name with extension',
+            'heading': 'Select scripts to open'
             },
         'tests': {
             'col': tests_col, 
             'label': 'Unit tests 📝', 
             'ext': 'py',
-            'text_input': 'Enter the file name(include .py extension)'
+            'text_input': 'Enter the file name(include .py extension)',
+            'heading': 'Select scripts to open'
             }
     }
 
@@ -39,17 +43,17 @@ def home():
                 file_name = st.text_input(
                                 label=content_info['text_input']
                                 )
+                file_create = st.button('Add', key=f"b'{i}'")
 
-                if file_name:
+                if file_create:
                     if os.path.exists(os.path.join(key, file_name)):
-                        st.markdown(f"File **{file_name}** exists")
+                        st.info(f"File {file_name} exists")
                     else:
                         create_file(key, file_name)
-                        st.markdown(f"Created **{file_name}**")
+                        st.experimental_rerun()
 
             # TODO: clear text input when enter key is pressed
-            st.markdown(f"ℹ️ Only ** *.{content_info['ext']}** files are shown")
-            for f in files:
-                st.write(f"[{f}](google.com)")
-    
+            files_to_open = st.multiselect(content_info['heading'], files)
+            if files_to_open:
+                st.button('Open', key=(str(i)))
     
