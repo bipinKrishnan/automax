@@ -29,7 +29,7 @@ def home():
             'label': 'Unit tests 📝', 
             'ext': 'py',
             'text_input': 'Enter the file name(include .py extension)',
-            'heading': 'Select scripts to open'
+            'heading': 'Select tests to open'
             }
     }
 
@@ -54,6 +54,5 @@ def home():
 
             # TODO: clear text input when enter key is pressed
             files_to_open = st.multiselect(content_info['heading'], files)
-            if files_to_open:
-                st.button('Open', key=(str(i)))
+            st.button('Open', key=str(randint(1, 1000)))
     
