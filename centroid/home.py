@@ -27,7 +27,7 @@ def home():
             'col': src_col, 
             'label': 'Production code 🚢', 
             'ext': 'py',
-            'text_input': 'Enter the name of the file',
+            'text_input': 'Enter the name of the file(include extension)',
             'heading': 'Select scripts to open'
             },
         'tests': {
@@ -45,7 +45,7 @@ def home():
         cwd = os.path.join(os.getcwd(), key)
 
         with content_info['col']: 
-            st.write(f"{content_info['label']}")
+            st.write(f"**{content_info['label']}**")
 
             with st.expander(label="Launch code files"):
                 files_to_open = st.multiselect(content_info['heading'], files)

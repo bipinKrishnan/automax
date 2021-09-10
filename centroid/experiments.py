@@ -7,6 +7,7 @@ def show_plots(
     col,
     dir_name, 
     selected_ipynb,
+    title,
     load_cache
     ):
         with col:
@@ -20,6 +21,10 @@ def show_plots(
                         )
 
                 with open(os.path.join(dir_name, f"{html_name}.html")) as f:
+                    st.markdown(
+                        f"<h3 style='text-align: center; color: black;'>{title}</h3>", 
+                        unsafe_allow_html=True
+                        )
                     components.html(
                         f.read(),
                         height=500,
@@ -39,6 +44,7 @@ def display_ipynb_plots():
     col1, col2 = st.columns([1, 3])
 
     ipynb_files = [dir for dir in os.listdir(dir_name) if dir.split('.')[-1]=='ipynb']
+    title = "All the plots inside the selected Jupyter notebook will be displayed here"
 
     if ipynb_files:
         with col1:
@@ -53,12 +59,14 @@ def display_ipynb_plots():
                         col=col2,
                         dir_name=dir_name, 
                         selected_ipynb=selected_ipynb,
+                        title=title,
                         load_cache=load_cache
                 )
             else:
                 with col2:
-                    st.info(
-                        "All the plots inside the selected Jupyter notebook will be displayed here"
+                    st.markdown(
+                        f"<h3 style='text-align: center; color: black;'>{title}</h3>", 
+                        unsafe_allow_html=True
                         )
             
     else:
