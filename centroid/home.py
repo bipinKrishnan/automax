@@ -73,8 +73,6 @@ def home():
                         create_file(key, file_name)
                     st.experimental_rerun()
             
-            # TODO: clear text input when enter key is pressed
-
             running_nb_servers = [nb_info for nb_info in notebookapp.list_running_servers() if nb_info['notebook_dir']==cwd]
 
             st.write("----------------")
