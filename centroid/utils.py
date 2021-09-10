@@ -1,4 +1,5 @@
 import os
+import streamlit as st
 from subprocess import Popen
 from notebook import notebookapp
 from webbrowser import open_new_tab
@@ -32,7 +33,7 @@ def open_as_notebooks(path, python_code_file):
                 open_new_tab(f"{url}?token={token}")
                 break
 
-def kill_nbs(path=None):
+def kill_nbs(path=None, refresh=False):
     running_nb_servers = notebookapp.list_running_servers()
     if running_nb_servers:
         if path is None:
@@ -44,3 +45,19 @@ def kill_nbs(path=None):
                 if nb_info['notebook_dir']==path:
                     port = nb_info['port']
                     Popen(['jupyter', 'notebook', 'stop', f'{port}'])
+
+        if refresh:
+            st.experimental_rerun()
+
+
+def get_num_instances(path):
+    running_nb_servers = notebookapp.list_running_servers()
+    if running_nb_servers:
+        count = 0
+        for nb_info in running_nb_servers:
+            if nb_info['notebook_dir']==path:
+                count += 1
+    else:
+        count = 0
+
+    return count

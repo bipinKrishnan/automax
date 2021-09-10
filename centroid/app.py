@@ -28,5 +28,5 @@ if __name__ =="__main__":
 
     if menu_id=="Home":
         home()
-    elif menu_id=="Experiments":
+    if menu_id=="Experiments":
         display_ipynb_plots()
