@@ -29,3 +29,9 @@ OTHERS:
 
   files_to_create:
     - README.md
+
+  IGNORE_LIST:
+    - __pycache__
+    - .ipynb_checkpoints
+    - .pytest_cache
+    - .vscode
