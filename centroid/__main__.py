@@ -17,11 +17,11 @@ def main(path_to_project, project_name):
             'utils.py', 
             'workflow.py'
             ]
-            
+
         webapp_dst_path = os.path.join(project_path, webapp_folder)
 
         folders = ['experiments', 'src', 'tests']
-        files = ['README.md']
+        files = ['README.md', 'script_arguments']
 
         os.makedirs(project_path, exist_ok=True)
         for folder_name in folders:

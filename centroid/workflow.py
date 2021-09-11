@@ -8,12 +8,14 @@ def workflow():
         'src': {
             'col': prod_col,
             'title': "Run production code workflow",
-            'multiselect_text': "Select the order of the workflow"
+            'multiselect_text': "Select the order of the workflow",
+            'button_text': 'Run workflow'
         },
         'tests': {
             'col': tests_col,
-            'title': 'Run unit testing code',
-            'multiselect_text': "Select the tests you wish to skip"
+            'title': 'Run unit tests',
+            'multiselect_text': "Select the tests you wish to skip",
+            'button_text': 'Run tests'
         }
     }
 
@@ -27,5 +29,6 @@ def workflow():
             st.multiselect(
                 label=content_info['multiselect_text'], 
                 options=files, 
+                help="If there are arguments for any scripts, store it in 'script_arguments' file"
                 )
-            st.button('Run', key=f"b'{i}'")
+            st.button(content_info['button_text'])
