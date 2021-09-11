@@ -3,6 +3,7 @@ import hydralit_components as hc
 
 from home import home
 from experiments import display_ipynb_plots
+from workflow import workflow
 
 if __name__ =="__main__":
     st.set_page_config(layout='wide',initial_sidebar_state='collapsed',)
@@ -28,5 +29,7 @@ if __name__ =="__main__":
 
     if menu_id=="Home":
         home()
-    if menu_id=="Experiments":
+    elif menu_id=="Experiments":
         display_ipynb_plots()
+    elif menu_id=='Workflow':
+        workflow()
