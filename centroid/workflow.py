@@ -89,6 +89,7 @@ def workflow():
                 on_click=partial(run_scripts, key=key, selected_files=selected_files)
                 )
 
+            st.write('--------------')
             with st.expander(label='Output'):
                 if key=='src':
                     try:
