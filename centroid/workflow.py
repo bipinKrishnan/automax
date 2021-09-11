@@ -1,7 +1,7 @@
 import streamlit as st
 import os 
+import subprocess
 from functools import partial
-
 
 def check_script_args():
     args_file = 'script_arguments'
@@ -22,20 +22,31 @@ def check_script_args():
 def run_scripts(key, selected_files):
     if key=='src':
         args = check_script_args()
+        src_log = open("src.log", 'w')
+
         for file in selected_files:
             current_script = os.path.join(key, file)
 
             if file in args.keys():
-                res = os.system(f"python3 {current_script} {args[file]}")
+                subprocess.Popen(
+                    ["python3", f"{current_script}", f"'{args[file]}'"],
+                    stdout=src_log, stderr=src_log
+                    )
             else:
-                res = os.system(f"python3 {current_script}")
+                subprocess.Popen(
+                    ["python3", f"{current_script}"],
+                    stdout=src_log, stderr=src_log
+                    )
+
     elif key=='tests':
-        tests_to_run = ' '.join(
-            [
-                (os.path.join(key, test)) for test in os.listdir(key) if not test in selected_files
-            ]
-        )
-        res = os.system(f"pytest -v {tests_to_run}")
+        test_log = open('tests.log', 'w')
+        test_command = ['pytest', '-v']
+        for test in os.listdir(key):
+            if (not test in selected_files) and (test!='__pycache__'):
+                test_command.append(os.path.join(key, test))
+
+        subprocess.Popen(test_command, stdout=test_log, stderr=test_log)
+    
 
 def workflow():
     prod_col, tests_col = st.columns(2)
@@ -73,6 +84,22 @@ def workflow():
                     options=files, 
                     help=help
                     )
-            st.button(content_info['button_text'], on_click=partial(
-                run_scripts, key=key, selected_files=selected_files)
-            )
+            run_button = st.button(
+                content_info['button_text'],
+                on_click=partial(run_scripts, key=key, selected_files=selected_files)
+                )
+
+            with st.expander(label='Output'):
+                if key=='src':
+                    try:
+                        st.code(open('src.log', 'r').read())
+                    except FileNotFoundError:
+                        st.code("")
+
+                elif key=='tests':
+                    try:
+                        st.code(open('tests.log', 'r').read())
+                    except FileNotFoundError:
+                        st.code("")
+
+                
