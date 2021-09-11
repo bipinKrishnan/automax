@@ -8,7 +8,7 @@ from utils import (
     kill_nbs, 
     open_as_notebooks, 
     create_nb,
-    get_num_instances
+    get_num_instances,
 )
 
 

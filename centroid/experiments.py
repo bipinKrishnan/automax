@@ -1,7 +1,8 @@
 import streamlit as st
 import streamlit.components.v1 as components
-
 import os
+
+from utils import load_yaml
 
 def show_plots(
     col,
@@ -36,8 +37,11 @@ def show_plots(
             # TODO: pipe all other stderr to streamlit interface
 
 def display_ipynb_plots():
+    config = load_yaml(os.path.join('centroid_dashboard', 'config.yaml'))
+    config_exp = config['EXP']
+
     cwd = os.getcwd()
-    dir_name = 'experiments'
+    dir_name = config_exp['folder']
     deafult_option = 'None'
     col1, col2 = st.columns([1, 3])
 

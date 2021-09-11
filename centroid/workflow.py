@@ -1,10 +1,17 @@
+from json import load
 import streamlit as st
 import os 
 import subprocess
 from functools import partial
 
+from utils import load_yaml
+
 def check_script_args():
-    args_file = 'script_arguments'
+    config = load_yaml(os.path.join('centroid_dashboard', 'config.yaml'))
+    args_file = config['OTHERS']['script_args_file']
+    if not os.path.exists(args_file):
+        open(args_file, 'w').close()
+
     script_info_dict = {}
 
     if os.path.getsize(args_file)>0:
@@ -20,9 +27,13 @@ def check_script_args():
     return script_info_dict
 
 def run_scripts(key, selected_files):
-    if key=='src':
+    config = load_yaml(os.path.join('centroid_dashboard', 'config.yaml'))
+    logs_folder = config['OTHERS']['logs_folder']
+
+    if key==config['SRC']['folder']:
         args = check_script_args()
-        src_log = open("src.log", 'w')
+        src_log_file = config['SRC']['log_file']
+        src_log = open(os.path.join(logs_folder, src_log_file), 'w')
 
         for file in selected_files:
             current_script = os.path.join(key, file)
@@ -38,9 +49,11 @@ def run_scripts(key, selected_files):
                     stdout=src_log, stderr=src_log
                     )
 
-    elif key=='tests':
-        test_log = open('tests.log', 'w')
+    elif key==config['TESTS']['folder']:
+        test_log_file = config['TESTS']['log_file']
+        test_log = open(os.path.join(logs_folder, test_log_file), 'w')
         test_command = ['pytest', '-v']
+
         for test in os.listdir(key):
             if (not test in selected_files) and (test!='__pycache__'):
                 test_command.append(os.path.join(key, test))
@@ -49,16 +62,22 @@ def run_scripts(key, selected_files):
     
 
 def workflow():
+    config = load_yaml(os.path.join('centroid_dashboard', 'config.yaml'))
+    config_src = config['SRC']
+    config_tests = config['TESTS']
+    logs_folder = config['OTHERS']['logs_folder']
+
+    os.makedirs(logs_folder, exist_ok=True)
+
     prod_col, tests_col = st.columns(2)
-    default_multiselect = "None"
     display_content = {
-        'src': {
+        config_src['folder']: {
             'col': prod_col,
             'title': "Run production code workflow",
             'multiselect_text': "Select the order of the workflow",
             'button_text': 'Run workflow'
         },
-        'tests': {
+        config_tests['folder']: {
             'col': tests_col,
             'title': 'Run unit tests',
             'multiselect_text': "Select the tests you wish to skip",
@@ -74,9 +93,9 @@ def workflow():
         with content_info['col']:
             st.write(f"**{content_info['title']}**")
 
-            if key=='src':
+            if key==config_src['folder']:
                 help = "If there are arguments for any scripts, store it in 'script_arguments' file"
-            elif key=='tests':
+            elif key==config_tests['folder']:
                 help = ""
 
             selected_files = st.multiselect(
@@ -91,15 +110,17 @@ def workflow():
 
             st.write('--------------')
             with st.expander(label='Output'):
-                if key=='src':
+
+                if key==config_src['folder']:
                     try:
-                        st.code(open('src.log', 'r').read())
+                        with open(os.path.join(logs_folder, config_src['log_file']), 'r') as f:
+                            st.code(f.read())
                     except FileNotFoundError:
                         st.code("")
-
-                elif key=='tests':
+                elif key==config_tests['folder']:
                     try:
-                        st.code(open('tests.log', 'r').read())
+                        with open(os.path.join(logs_folder, config_tests['log_file']), 'r') as f:
+                            st.code(f.read())
                     except FileNotFoundError:
                         st.code("")
 

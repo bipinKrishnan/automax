@@ -3,6 +3,7 @@ import streamlit as st
 from subprocess import Popen
 from notebook import notebookapp
 from webbrowser import open_new_tab
+import yaml
 
 from notebook.services.contents.filemanager import FileContentsManager as FCM
 
@@ -61,3 +62,9 @@ def get_num_instances(path):
         count = 0
 
     return count
+
+def load_yaml(yaml_file):
+    with open(yaml_file, 'r') as f:
+        params = yaml.safe_load(f)
+
+    return params 

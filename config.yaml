@@ -1,0 +1,31 @@
+EXP:
+  folder: experiments
+
+SRC:
+  folder: src
+  log_file: src.log
+
+TESTS:
+  folder: tests
+  log_file: tests.log
+
+OTHERS:
+  webapp_folder: centroid_dashboard
+  webapp_main_file: app.py
+  src_folder_for_project: centroid
+  logs_folder: logs
+  script_args_file: script_arguments
+  files_to_copy:
+    - app.py
+    - home.py
+    - experiments.py
+    - utils.py
+    - workflow.py
+
+  folders_to_create:
+    - experiments
+    - src
+    - tests
+
+  files_to_create:
+    - README.md
