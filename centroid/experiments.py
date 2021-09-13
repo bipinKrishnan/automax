@@ -70,4 +70,4 @@ def display_ipynb_plots():
                     st.info(title)
             
     else:
-        st.error("⚠️ No Jypter notebooks 📓 found in experiments folder")
+        st.error("⚠️ No Experiment notebooks 📓 found, first create one.")
