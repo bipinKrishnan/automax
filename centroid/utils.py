@@ -45,7 +45,10 @@ def kill_nbs(path=None, refresh=False):
             for nb_info in running_nb_servers:
                 if nb_info['notebook_dir']==path:
                     port = nb_info['port']
-                    Popen(['jupyter', 'notebook', 'stop', f'{port}'])
+                    try:
+                        Popen(['jupyter', 'notebook', 'stop', f'{port}'])
+                    except RuntimeError:
+                        print("[!]Notebook already shutdown")
 
         if refresh:
             st.experimental_rerun()
