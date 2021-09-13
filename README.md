@@ -1,6 +1,10 @@
-# Centroid
-Central dashboard for data scientists
+<div align="center">
 
+<img src="docs/source/imgs/centroid_logo.png" width="400px">
+
+**Central dashboard for data scientists**
+
+_________________________________________________________________________________________
 ## Usage
 ```bash
    python3 centroid <path_to_project> <project_name>
