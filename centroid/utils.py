@@ -34,7 +34,7 @@ def open_as_notebooks(path, python_code_file):
                 open_new_tab(f"{url}?token={token}")
                 break
 
-def kill_nbs(path=None, refresh=False):
+def kill_nbs(path=None):
     running_nb_servers = notebookapp.list_running_servers()
     if running_nb_servers:
         if path is None:
@@ -49,9 +49,6 @@ def kill_nbs(path=None, refresh=False):
                         Popen(['jupyter', 'notebook', 'stop', f'{port}'])
                     except RuntimeError:
                         print("[!]Notebook already shutdown")
-
-        if refresh:
-            st.experimental_rerun()
 
 
 def get_num_instances(path):

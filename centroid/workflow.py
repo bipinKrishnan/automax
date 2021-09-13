@@ -112,16 +112,15 @@ def workflow():
             with st.expander(label='Output'):
 
                 if key==config_src['folder']:
-                    try:
-                        with open(os.path.join(logs_folder, config_src['log_file']), 'r') as f:
-                            st.code(f.read())
-                    except FileNotFoundError:
-                        st.code("")
+                    log_path = os.path.join(logs_folder, config_src['log_file'])
                 elif key==config_tests['folder']:
-                    try:
-                        with open(os.path.join(logs_folder, config_tests['log_file']), 'r') as f:
-                            st.code(f.read())
-                    except FileNotFoundError:
-                        st.code("")
+                    log_path = os.path.join(logs_folder, config_tests['log_file'])
+  
+                try:
+                    with open(log_path, 'r') as f:
+                        content = f.read()
+                        st.code(content)
+                except FileNotFoundError:
+                    st.code("")
 
                 

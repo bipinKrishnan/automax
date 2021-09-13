@@ -84,8 +84,8 @@ def home():
             st.text(f"Jupyter instances running 🏃: {get_num_instances(cwd)}")
             
             if running_nb_servers:
-                st.button(
+                a = st.button(
                     "Stop all", 
-                    on_click=partial(kill_nbs, path=cwd, refresh=True), 
+                    on_click=partial(kill_nbs, path=cwd), 
                     key=key
                     )
