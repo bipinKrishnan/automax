@@ -2,7 +2,7 @@
 
 <img src="docs/source/imgs/centroid_logo.png" width="400px">
 
-**Central dashboard for data scientists**
+**Central dashboard to control every aspect of your data science project during development**
 
 _________________________________________________________________________________________
 ## Usage
