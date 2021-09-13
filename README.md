@@ -4,7 +4,7 @@
 
 **Central dashboard to control every aspect of your data science project during development**
    
-**From creating a project structure to running unit tests.**
+**Starting from experimentation to unit tests 🏁**
 
 _________________________________________________________________________________________
 ## Usage
