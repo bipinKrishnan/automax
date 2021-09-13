@@ -3,6 +3,7 @@ import streamlit as st
 import os 
 import subprocess
 from functools import partial
+from datetime import datetime
 
 from utils import load_yaml
 
@@ -109,18 +110,25 @@ def workflow():
                 )
 
             st.write('--------------')
-            with st.expander(label='Output'):
+            st.text('Output')
+            st.button('⟳', key=key)
 
-                if key==config_src['folder']:
-                    log_path = os.path.join(logs_folder, config_src['log_file'])
-                elif key==config_tests['folder']:
-                    log_path = os.path.join(logs_folder, config_tests['log_file'])
-  
-                try:
-                    with open(log_path, 'r') as f:
-                        content = f.read()
-                        st.code(content)
-                except FileNotFoundError:
-                    st.code("")
+            if key==config_src['folder']:
+                log_path = os.path.join(logs_folder, config_src['log_file'])
+            elif key==config_tests['folder']:
+                log_path = os.path.join(logs_folder, config_tests['log_file'])
+
+            try:
+                with open(log_path, 'r') as f:
+                    content = f.read()
+
+                if content!="":
+                    m_time = datetime.fromtimestamp(
+                        os.path.getmtime(log_path)
+                        )
+                    st.code(f"[+]Output logged at {m_time}\n{'-'*20}\n\n{content}")
+
+            except FileNotFoundError:
+                st.code("")
 
                 

@@ -7,7 +7,12 @@ from experiments import display_ipynb_plots
 from workflow import workflow
 
 if __name__ =="__main__":
-    st.set_page_config(layout='wide',initial_sidebar_state='collapsed',)
+    st.set_page_config(
+        page_title='Centroid',
+        page_icon='random',
+        layout='wide',
+        initial_sidebar_state='collapsed'
+        )
 
     menu_data = [
         {'id':'Experiments','icon':"☢️",'label':"Experiments"},

@@ -34,7 +34,7 @@ def show_plots(
                     st.error(f"No cache found for {selected_ipynb}")
                 else:
                     st.error(f"An error occured while fetching the plots from {selected_ipynb}")
-            # TODO: pipe all other stderr to streamlit interface
+
 
 def display_ipynb_plots():
     config = load_yaml(os.path.join('centroid_dashboard', 'config.yaml'))
@@ -43,6 +43,7 @@ def display_ipynb_plots():
     cwd = os.getcwd()
     dir_name = config_exp['folder']
     deafult_option = 'None'
+
     col1, col2 = st.columns([1, 3])
 
     ipynb_files = [dir for dir in os.listdir(dir_name) if dir.split('.')[-1]=='ipynb']

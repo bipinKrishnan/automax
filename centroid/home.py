@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import streamlit as st
 import os
 from functools import partial
@@ -22,24 +21,24 @@ def home():
             'label': 'Experiment notebooks 📓', 
             'ext': 'ipynb',
             'text_input': 'Enter the notebook name(include .ipynb extension)',
-            'heading': 'Select notebooks to open'
+            'file_label': 'notebook'
             },
         'src': {
             'col': src_col, 
             'label': 'Production code 🚢', 
             'ext': 'py',
-            'text_input': 'Enter the name of the file(include extension)',
-            'heading': 'Select scripts to open'
+            'text_input': 'Enter the file name(include extension)',
+            'file_label': 'script'
             },
         'tests': {
             'col': tests_col, 
             'label': 'Unit tests 📝', 
             'ext': 'py',
             'text_input': 'Enter the name of the test(include .py extension)',
-            'heading': 'Select tests to open'
+            'file_label': 'test'
             }
     }
-    
+
     for i, key in enumerate(display_content.keys()):
         content_info = display_content[key]
         files = [f for f in os.listdir(key) if f.split('.')[-1]==content_info['ext']]
@@ -48,7 +47,7 @@ def home():
         with content_info['col']: 
             st.write(f"**{content_info['label']}**")
 
-            with st.expander(label="Create new file"):
+            with st.expander(label=f"Create new file"):
                 file_name = st.text_input(
                                 label=content_info['text_input'],
                                 help=f"Created files will be stored in '{key}' directory"
@@ -65,11 +64,14 @@ def home():
                         create_file(key, file_name)
                     st.experimental_rerun()
 
-            with st.expander(label="Launch code files"):
+            with st.expander(label=f"Open files"):
                 if not files:
                     st.info(f"No .{content_info['ext']} files found, first create one.")
                 else:
-                    files_to_open = st.multiselect(content_info['heading'], files)
+                    files_to_open = st.multiselect(
+                        f"Select {content_info['file_label']}s to open", 
+                        files
+                        )
                     st.button(
                         'Open', key=str(i), on_click=partial(
                         open_as_notebooks, 
