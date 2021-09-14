@@ -8,8 +8,7 @@
    
    
 <p align="center">
-   <a href="https://github.com/bipinKrishnan/centroid/#">Website</a> |
-   <a href="https://github.com/bipinKrishnan/centroid/#">Docs</a> |
+   <a href="https://github.com/bipinKrishnan/centroid/#">Overview</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#">Quickstart</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#">Tutorials</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#">Forums</a>
