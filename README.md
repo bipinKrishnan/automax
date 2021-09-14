@@ -8,8 +8,8 @@
    
    
 <p align="center">
-   <a href="https://github.com/bipinKrishnan/centroid/#">Overview</a> |
-   <a href="https://github.com/bipinKrishnan/centroid/#">Quickstart</a> |
+   <a href="https://github.com/bipinKrishnan/centroid/#Overview">Overview</a> |
+   <a href="https://github.com/bipinKrishnan/centroid/#Quickstart">Quickstart</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#">Tutorials</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#">Forums</a>
 </p>
@@ -22,6 +22,10 @@ ________________________________________________________________________________
    [![license](https://img.shields.io/github/license/bipinKrishnan/centroid)](https://github.com/bipinKrishnan/centroid/blob/main/LICENSE)
    
 </div>
+
+## Overview
+
+<img src="docs/source/imgs/dashboard_home.png" height=400px>
 
 ## Usage
 ```bash
