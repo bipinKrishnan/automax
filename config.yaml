@@ -15,6 +15,7 @@ OTHERS:
   src_folder_for_project: centroid
   logs_folder: logs
   script_args_file: script_arguments
+  cache_folder: .centroid
   files_to_copy:
     - app.py
     - home.py

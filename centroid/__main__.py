@@ -31,6 +31,7 @@ def main(path_to_project, project_name):
             create_file(project_path, file_name)
         
         os.makedirs(webapp_dst_path, exist_ok=True)
+        os.makedirs(os.path.join(project_path, config_others['cache_folder']), exist_ok=True)
 
         for f in files_to_copy:
             src_path = os.path.join(src_folder, f)

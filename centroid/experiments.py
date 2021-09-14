@@ -9,11 +9,16 @@ def show_plots(
     dir_name, 
     selected_ipynb,
     title,
-    load_cache
+    load_cache,
+    cache_folder
     ):
         with col:
             ipynb_path = os.path.join(dir_name, selected_ipynb)
-            html_name = selected_ipynb.split('.')[0]
+            html_name = os.path.join(
+                os.getcwd(), 
+                cache_folder, 
+                selected_ipynb.split('.')[0]
+                )
 
             try:
                 if not load_cache:
@@ -21,7 +26,7 @@ def show_plots(
                         f"jupyter nbconvert --to html --no-input {ipynb_path} --output {html_name}.html"
                         )
 
-                with open(os.path.join(dir_name, f"{html_name}.html")) as f:
+                with open(f"{html_name}.html") as f:
                     st.info(title)
                     components.html(
                         f.read(),
@@ -39,6 +44,7 @@ def show_plots(
 def display_ipynb_plots():
     config = load_yaml(os.path.join('centroid_dashboard', 'config.yaml'))
     config_exp = config['EXP']
+    cache_folder = config['OTHERS']['cache_folder']
 
     cwd = os.getcwd()
     dir_name = config_exp['folder']
@@ -63,7 +69,8 @@ def display_ipynb_plots():
                         dir_name=dir_name, 
                         selected_ipynb=selected_ipynb,
                         title=title,
-                        load_cache=load_cache
+                        load_cache=load_cache,
+                        cache_folder=cache_folder
                 )
             else:
                 with col2:

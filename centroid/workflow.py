@@ -27,9 +27,8 @@ def check_script_args():
 
     return script_info_dict
 
-def run_scripts(key, selected_files):
+def run_scripts(key, selected_files, logs_folder):
     config = load_yaml(os.path.join('centroid_dashboard', 'config.yaml'))
-    logs_folder = config['OTHERS']['logs_folder']
 
     if key==config['SRC']['folder']:
         args = check_script_args()
@@ -66,7 +65,12 @@ def workflow():
     config = load_yaml(os.path.join('centroid_dashboard', 'config.yaml'))
     config_src = config['SRC']
     config_tests = config['TESTS']
-    logs_folder = config['OTHERS']['logs_folder']
+    config_others = config['OTHERS']
+    logs_folder = os.path.join(
+        os.getcwd(), 
+        config_others['cache_folder'], 
+        config_others['logs_folder']
+        )
 
     os.makedirs(logs_folder, exist_ok=True)
 
@@ -106,7 +110,12 @@ def workflow():
                     )
             run_button = st.button(
                 content_info['button_text'],
-                on_click=partial(run_scripts, key=key, selected_files=selected_files)
+                on_click=partial(
+                    run_scripts, 
+                    key=key, 
+                    selected_files=selected_files,
+                    logs_folder=logs_folder
+                    )
                 )
 
             st.write('--------------')
