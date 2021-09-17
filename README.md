@@ -2,9 +2,9 @@
 
 <img src="docs/source/imgs/centroid_logo.png" width="400px">
 
-**Central dashboard to control every aspect of your data science project during development**
+**Automate everything possible from experimentation to unit tests**
    
-**Starting from experimentation to unit tests 🏁**
+**If it can be automated, assign it to a button**
    
    
 <p align="center">
