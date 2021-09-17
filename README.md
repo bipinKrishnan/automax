@@ -8,8 +8,8 @@
    
    
 <p align="center">
-   <a href="https://github.com/bipinKrishnan/centroid/#Why Centroid">Why Centroid</a> |
-   <a href="https://github.com/bipinKrishnan/centroid/#Quickstart">Quickstart</a> |
+   <a href="https://github.com/bipinKrishnan/centroid/#why-centroid-?">Why Centroid</a> |
+   <a href="https://github.com/bipinKrishnan/centroid/#quickstart">Quickstart</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#">Tutorials</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#">Forums</a>
 </p>
