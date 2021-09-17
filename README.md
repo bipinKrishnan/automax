@@ -2,9 +2,7 @@
 
 <img src="docs/source/imgs/centroid_logo.png" width="400px">
    
- __________________________________________________________________
-
-**Automate everything possible from experimentation to unit tests**
+**Data scientist's central dashboard which automates everything possible**
    
 **If it can be automated, assign it to a button**
  
@@ -47,3 +45,6 @@ With centroid, you can:
 ```
 
 <img src="docs/source/imgs/dashboard_home.png" height=400px>
+
+# TODO
+1. Create a better intro at the bottom of the logo, that describes what centroid is and how one can benefit from using it
