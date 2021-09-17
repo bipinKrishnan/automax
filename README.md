@@ -8,7 +8,7 @@
    
    
 <p align="center">
-   <a href="https://github.com/bipinKrishnan/centroid/#why-centroid-?">Why Centroid</a> |
+   <a href="https://github.com/bipinKrishnan/centroid/#why-centroid-">Why Centroid</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#quickstart">Quickstart</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#">Tutorials</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#">Forums</a>
@@ -25,11 +25,14 @@ ________________________________________________________________________________
 
 ## Why Centroid ?
 
-<img src="docs/source/imgs/dashboard_home.png" height=400px>
+Because:
 
-This dashboard will be your go to place for automating the repitive processes with the click of a button. There are things that data scientists always do when starting a project, no more of hand coding those tasks anymore because you have centroid in your toolkit now.
+1. It gets you up and running with your data science project as quickly as possible.
+2. It automates most common repititive tasks with the click of a button.
 
 ## Usage
 ```bash
    python3 centroid <path_to_project> <project_name>
 ```
+
+<img src="docs/source/imgs/dashboard_home.png" height=400px>
