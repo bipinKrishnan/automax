@@ -25,10 +25,10 @@ ________________________________________________________________________________
 
 ## Why Centroid ?
 
-Because:
+Because, it:
 
-1. It gets you up and running with your data science project as quickly as possible.
-2. It automates most common repititive tasks with the click of a button.
+1. Gets you up and running with your data science project as quickly as possible.
+2. Automates most common repititive tasks with the click of a button.
 
 ## Usage
 ```bash
