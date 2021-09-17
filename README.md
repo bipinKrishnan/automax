@@ -27,6 +27,8 @@ ________________________________________________________________________________
 
 <img src="docs/source/imgs/dashboard_home.png" height=400px>
 
+This dashboard will be your go to place for automating the repitive processes with the click of a button. There are things that data scientists always do when starting a project, no more of hand coding those tasks anymore because you have centroid in your toolkit now.
+
 ## Usage
 ```bash
    python3 centroid <path_to_project> <project_name>
