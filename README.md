@@ -2,7 +2,7 @@
 
 <img src="docs/source/imgs/centroid_logo.png" width="400px">
    
-**Data scientist's central dashboard which automates everything possible**
+**Automate data science tasks, not with 600 lines of code, but with a button**
    
 **If it can be automated, assign it to a button**
  
