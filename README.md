@@ -29,9 +29,13 @@ With centroid, you can:
 
 1. Automate the process of creating a project structure.
 2. Do all these with the click of a button:
+
       a. Running workflows
+      
       b. Running unit tests
+      
       c. See all the cell outputs of a notebook without opening it
+      
       d. Edit python files as if they were jupyter notebooks
 
 ## Usage
