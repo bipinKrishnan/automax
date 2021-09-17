@@ -27,8 +27,8 @@ ________________________________________________________________________________
 
 Because, it:
 
-1. Gets you up and running with your data science project as quickly as possible.
-2. Automates most common repititive tasks with the click of a button.
+1. Gets you up and running with your data science project.
+2. Automate common tasks with the click of a button.
 
 ## Usage
 ```bash
