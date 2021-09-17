@@ -8,7 +8,7 @@
    
    
 <p align="center">
-   <a href="https://github.com/bipinKrishnan/centroid/#Overview">Overview</a> |
+   <a href="https://github.com/bipinKrishnan/centroid/#Why Centroid">Why Centroid</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#Quickstart">Quickstart</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#">Tutorials</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#">Forums</a>
@@ -23,7 +23,7 @@ ________________________________________________________________________________
    
 </div>
 
-## Overview
+## Why Centroid ?
 
 <img src="docs/source/imgs/dashboard_home.png" height=400px>
 
