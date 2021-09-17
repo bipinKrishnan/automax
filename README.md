@@ -25,10 +25,14 @@ ________________________________________________________________________________
 
 ## Why Centroid🤔
 
-Because, it:
+With centroid, you can:
 
-1. Gets you up and running with your data science project.
-2. Automate common tasks with the click of a button.
+1. Automate the process of creating a project structure.
+2. Do all these with the click of a button:
+      a. Running workflows
+      b. Running unit tests
+      c. See all the cell outputs of a notebook without opening it
+      d. Edit python files as if they were jupyter notebooks
 
 ## Usage
 ```bash
