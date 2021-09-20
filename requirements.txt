@@ -8,3 +8,4 @@ PyYAML==5.4.1
 typer==0.4.0
 jupytext==1.11.5
 pandas-profiling==3.0.0
+pycaret==2.3.3
