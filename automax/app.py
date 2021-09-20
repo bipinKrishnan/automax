@@ -3,12 +3,13 @@ import streamlit as st
 import hydralit_components as hc
 
 from home import home
-from experiments import display_ipynb_plots
+from jupyter_outputs import display_ipynb_plots
+from experiments import show_experiments
 from workflow import workflow
 
 if __name__ =="__main__":
     st.set_page_config(
-        page_title='Centroid',
+        page_title='Automax',
         page_icon='random',
         layout='wide',
         initial_sidebar_state='collapsed'
@@ -16,8 +17,8 @@ if __name__ =="__main__":
 
     menu_data = [
         {'id':'Experiments','icon':"☢️",'label':"Experiments"},
-        {'id':'Workflow','icon':"♻️",'label':"Workflow"},
-        {'id':'Deployment','icon':"📦",'label':"Deployment"}
+        {'id':'Jupyter outputs','icon':"📔",'label':"Jupyter outputs"},
+        {'id':'Workflow','icon':"♻️",'label':"Workflow"}
     ]
 
     # we can override any part of the primary colors of the menu
@@ -36,6 +37,8 @@ if __name__ =="__main__":
     if menu_id=="Home":
         home()
     elif menu_id=="Experiments":
+        show_experiments()  
+    elif menu_id=="Jupyter outputs":
         display_ipynb_plots()
     elif menu_id=='Workflow':
         workflow()

@@ -10,23 +10,25 @@ TESTS:
   log_file: tests.log
 
 OTHERS:
-  webapp_folder: centroid_dashboard
+  webapp_folder: automax_dashboard
   webapp_main_file: app.py
-  src_folder_for_project: centroid
+  src_folder_for_project: automax
   logs_folder: logs
   script_args_file: script_arguments
-  cache_folder: .centroid
+  cache_folder: .automax
   files_to_copy:
     - app.py
     - home.py
     - experiments.py
+    - jupyter_outputs.py
     - utils.py
     - workflow.py
 
   folders_to_create:
-    - experiments
-    - src
-    - tests
+    exp_folder: experiments
+    code_folder: src
+    tests_folder: tests
+    data_folder: data
 
   files_to_create:
     - README.md

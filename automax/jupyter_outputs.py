@@ -42,7 +42,7 @@ def show_plots(
 
 
 def display_ipynb_plots():
-    config = load_yaml(os.path.join('centroid_dashboard', 'config.yaml'))
+    config = load_yaml(os.path.join('automax_dashboard', 'config.yaml'))
     config_exp = config['EXP']
     cache_folder = config['OTHERS']['cache_folder']
 

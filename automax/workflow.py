@@ -8,7 +8,7 @@ from datetime import datetime
 from utils import load_yaml
 
 def check_script_args():
-    config = load_yaml(os.path.join('centroid_dashboard', 'config.yaml'))
+    config = load_yaml(os.path.join('automax_dashboard', 'config.yaml'))
     args_file = config['OTHERS']['script_args_file']
     if not os.path.exists(args_file):
         open(args_file, 'w').close()
@@ -28,7 +28,7 @@ def check_script_args():
     return script_info_dict
 
 def run_scripts(key, selected_files, logs_folder):
-    config = load_yaml(os.path.join('centroid_dashboard', 'config.yaml'))
+    config = load_yaml(os.path.join('automax_dashboard', 'config.yaml'))
 
     if key==config['SRC']['folder']:
         args = check_script_args()
@@ -62,7 +62,7 @@ def run_scripts(key, selected_files, logs_folder):
     
 
 def workflow():
-    config = load_yaml(os.path.join('centroid_dashboard', 'config.yaml'))
+    config = load_yaml(os.path.join('automax_dashboard', 'config.yaml'))
     config_src = config['SRC']
     config_tests = config['TESTS']
     config_others = config['OTHERS']

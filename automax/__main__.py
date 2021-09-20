@@ -20,7 +20,7 @@ def main(path_to_project, project_name):
 
         webapp_dst_path = os.path.join(project_path, webapp_folder)
 
-        folders = config_others['folders_to_create']
+        folders = config_others['folders_to_create'].values()
         files = config_others['files_to_create']
 
         os.makedirs(project_path, exist_ok=True)
