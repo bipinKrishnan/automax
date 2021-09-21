@@ -1,4 +1,3 @@
-from genericpath import exists
 import streamlit as st 
 import streamlit.components.v1 as components
 import os 
@@ -65,7 +64,7 @@ def show_experiments():
             f"Add the dataset in csv format to '{data_folder}' folder for generating data profile and baselines"
             )
 
-    col1, col2 = st.columns([1, 1])
+    col1, col2 = st.columns([2, 1])
 
     with col1:
         st.write("**Dataset profile**")
@@ -76,7 +75,7 @@ def show_experiments():
 
         load_cache_reports = st.checkbox('Load from cache', value=True, key=f"b'{1}'")
 
-        if report_dataset:
+        if (report_dataset) and (csv_files!=[]):
             get_profile_report(
                 dataset=report_dataset,
                 load_cache=load_cache_reports
