@@ -8,7 +8,7 @@
  
 <p align="center">
    <a href="https://github.com/bipinKrishnan/centroid/#why-automax">Why Automax🤔</a> |
-   <a href="https://github.com/bipinKrishnan/centroid/#quick-start">Quickstart🚀</a> |
+   <a href="https://github.com/bipinKrishnan/centroid/#quickstart">Quickstart🚀</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#">Tutorials🧑‍🏫</a> |
    <a href="https://github.com/bipinKrishnan/centroid/#">Forums💬</a>
 </p>
@@ -43,7 +43,7 @@ With Automax, you can:
    
    🗒️ Get baseline results from a set of models
 
-## Quick start
+## Quickstart
 
 1. Clone this repo with this command
 
