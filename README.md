@@ -35,13 +35,13 @@ With Automax, you can:
       
    📝 Running unit tests
       
-   🕵️ View notebook outputs without opening it
+   🕵️ View notebook outputs without opening it 
       
-   📓 Edit python scripts as if they were jupyter notebooks
+   📓 Edit python scripts as if they were jupyter notebooks 
    
-   📊 Get complete profile for a dataset
+   📊 Get complete profile for a dataset 
    
-   🗒️ Get baseline results from a set of models
+   🗒️ Get baseline results from a set of models 
 
 ## Quickstart
 
