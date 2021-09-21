@@ -45,13 +45,13 @@ With Automax, you can:
 
 ## Quickstart
 
-1. Clone this repo with this command
+1. Clone the repo
 
    ```console
    git clone git@github.com:bipinKrishnan/automax.git
    ```
    
-2. Change directory to the cloned path and run the following commands, automax will create the project with all the required files in the specified project path.
+2. Move to the cloned path and run the following commands, automax will create the project with all the required files in the specified project path.
 
    ```console
    python3 automax <path to project> <project name>
