@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/source/imgs/centroid_logo.png" width="400px">
+<img src="docs/source/imgs/automax_logo.png" width="400px">
    
 **Automate data science tasks, not with 600 lines of code, but with a button**
    
