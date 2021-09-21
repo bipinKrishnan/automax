@@ -28,10 +28,10 @@ ________________________________________________________________________________
 
 With Automax, you can:
 
-* Automate the process of creating a project structure.
-* Do all these with the click of a button:
+* Quickly create a project structure
+* Do all of these with the click of a button:
 
-    ♻️ Running workflows
+   ♻️ Running workflows
       
    📝 Running unit tests
       
