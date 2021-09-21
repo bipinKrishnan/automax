@@ -43,12 +43,22 @@ With Automax, you can:
    
    🗒️ Get baseline results from a set of models
 
-## Usage
-```bash
-   python3 centroid <path_to_project> <project_name>
-```
+## Quick start
 
-<img src="assets/images/dashboard_home.png" height=400px>
+1. Clone this repo with this command
 
-# TODO
-1. Create a better intro at the bottom of the logo, that describes what centroid is and how one can benefit from using it
+   ```console
+   git clone git@github.com:bipinKrishnan/automax.git
+   ```
+   
+2. Change directory to the cloned path and run the following commands, automax will create the project with all the required files in the specified project path.
+
+   ```console
+   python3 automax <path to project> <project name>
+   ```
+   
+3. Now move to the project path and run this command and the automax dashboard will open. Now whenever you need to open up the dashboard, the command shown below is all you need.
+
+   ```console
+   make automax-dashboard
+   ```
