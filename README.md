@@ -52,13 +52,13 @@ With Automax, you can:
    ```
    
 2. Move to the cloned path and run the following commands, automax will create the project with all the required files in the specified project path.
-
    ```console
    python3 automax <path to project> <project name>
    ```
    
-3. Now move to the project path and run this command and the automax dashboard will open. Now whenever you need to open up the dashboard, the command shown below is all you need.
+3. Now move to the project path and run this command and the automax dashboard will open.
 
    ```console
    make automax-dashboard
    ```
+   From now on, the above command is all you need to open the dashboard.
