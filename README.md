@@ -67,6 +67,8 @@ With Automax, you can:
  ## TODO
  
  - [ ] Refactor the codebase
+
+ - [ ] Show the complete file structure of the project in the dashboard
  
  - [ ] Make the project into cli tool which is automatically added to the env variable during the first install
  
