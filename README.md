@@ -71,3 +71,5 @@ With Automax, you can:
  - [ ] Make the project into cli tool which is automatically added to the env variable during the first install
  
  - [ ] Add documentation
+
+ - [ ] Add tests and CI
