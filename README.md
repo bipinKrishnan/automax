@@ -75,3 +75,5 @@ With Automax, you can:
  - [ ] Add documentation
 
  - [ ] Add tests and CI
+
+ - [ ] Add ability for users to add buttons to automate tasks specific to their projects
