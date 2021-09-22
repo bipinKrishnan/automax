@@ -62,3 +62,12 @@ With Automax, you can:
    make automax-dashboard
    ```
    From now on, the above command is all you need to open the dashboard.
+   
+   
+ ## TODO
+ 
+ - [ ] Refactor the codebase
+ 
+ - [ ] Make the project into cli tool which is automatically added to the env variable during the first install
+ 
+ - [ ] Add documentation
