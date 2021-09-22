@@ -2,7 +2,7 @@
 
 <img src="assets/images/automax_logo.png" width="400px">
    
-**Automate data science tasks, not with 600 lines of code, but with a button**
+**Automate data science tasks with a button, instead of 600 lines of code**
    
 **If it can be automated, assign it to a button**
  
