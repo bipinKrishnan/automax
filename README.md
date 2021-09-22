@@ -43,7 +43,7 @@ With Automax, you can:
    
    🗒️ Get baseline results from a set of models 
 
-## Quickstart
+## Quickstart🚀
 
 1. Clone the repo
 
