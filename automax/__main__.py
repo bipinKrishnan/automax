@@ -44,9 +44,11 @@ def main(path_to_project, project_name):
             os.path.join(project_path, webapp_folder, config_file)
             )
 
-        os.system(
-            f"cd {project_path} && streamlit run {os.path.join(webapp_folder, webapp_main_file)}"
-            )   
+        with open(os.path.join(project_path, 'Makefile'), 'w') as f:
+            dashboard_command = 'automax-dashboard'
+            f.write(
+                f".PHONY: {dashboard_command}\n{dashboard_command}:\n\t\tstreamlit run {os.path.join(webapp_folder, webapp_main_file)}"
+            )  
     except KeyboardInterrupt:
         exit()
 
