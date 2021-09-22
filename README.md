@@ -35,7 +35,7 @@ With Automax, you can:
       
    📝 Running unit tests
       
-   🕵️ View notebook outputs without opening it 
+   🕵️ View Jupyter notebook outputs
       
    📓 Edit python scripts as if they were jupyter notebooks 
    
