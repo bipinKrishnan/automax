@@ -24,7 +24,7 @@
 
 _________________________________________________________________________________________
 
-## Why Automax🤔
+## Why Automax 🤔
 
 With Automax, you can:
 
@@ -43,7 +43,7 @@ With Automax, you can:
    
    🗒️ Get baseline results from a set of models 
 
-## Quickstart🚀
+## Quickstart 🚀
 
 1. Clone the repo
 
