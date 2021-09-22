@@ -56,7 +56,7 @@ With Automax, you can:
    python3 automax <path to project> <project name>
    ```
    
-3. Now move to the project path and run this command and the automax dashboard will open.
+3. Now move to the project path, run this command and the automax dashboard will open.
 
    ```console
    make automax-dashboard
