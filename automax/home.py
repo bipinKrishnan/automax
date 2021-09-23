@@ -2,6 +2,9 @@ import streamlit as st
 import os
 from functools import partial
 from notebook import notebookapp
+import seedir as sd
+
+from utils import load_yaml
 
 from utils import (
     create_file, 
@@ -13,6 +16,7 @@ from utils import (
 
 
 def home():
+    config = load_yaml(os.path.join('automax_dashboard', 'config.yaml'))
     exp_col, src_col, tests_col = st.columns(3)
 
     display_content = {
@@ -21,21 +25,24 @@ def home():
             'label': 'Experiment notebooks 📓', 
             'ext': 'ipynb',
             'text_input': 'Enter the notebook name(include .ipynb extension)',
-            'file_label': 'notebook'
+            'file_label': 'notebook',
+            'folder_name': config['OTHERS']['folders_to_create']['exp_folder']
             },
         'src': {
             'col': src_col, 
             'label': 'Production code 🚢', 
             'ext': 'py',
             'text_input': 'Enter the file name(include extension)',
-            'file_label': 'script'
+            'file_label': 'script',
+            'folder_name': config['OTHERS']['folders_to_create']['code_folder']
             },
         'tests': {
             'col': tests_col, 
             'label': 'Unit tests 📝', 
             'ext': 'py',
             'text_input': 'Enter the name of the test(include .py extension)',
-            'file_label': 'test'
+            'file_label': 'test',
+            'folder_name': config['OTHERS']['folders_to_create']['tests_folder']
             }
     }
 
@@ -79,15 +86,19 @@ def home():
                         python_code_file=files_to_open
                         )
                     )
-            
-            running_nb_servers = [nb_info for nb_info in notebookapp.list_running_servers() if nb_info['notebook_dir']==cwd]
 
             st.write('------------------')
+
+            running_nb_servers = [nb_info for nb_info in notebookapp.list_running_servers() if nb_info['notebook_dir']==cwd]
+
             st.text(f"Jupyter instances running 🏃: {get_num_instances(cwd)}")
-            
             if running_nb_servers:
                 a = st.button(
                     "Stop all", 
                     on_click=partial(kill_nbs, path=cwd), 
                     key=key
                     )
+
+            st.code(
+                f"Directory structure\n\n{sd.seedir(content_info['folder_name'], style='emoji', indent=3, printout=False)}"
+                )
