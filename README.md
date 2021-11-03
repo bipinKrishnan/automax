@@ -14,11 +14,7 @@
 </p>
 
    [![license](https://img.shields.io/github/license/bipinKrishnan/automax)](https://github.com/bipinKrishnan/centroid/blob/main/LICENSE)
-   [![license](https://img.shields.io/github/license/bipinKrishnan/automax)](https://github.com/bipinKrishnan/centroid/blob/main/LICENSE)
-   [![license](https://img.shields.io/github/license/bipinKrishnan/automax)](https://github.com/bipinKrishnan/centroid/blob/main/LICENSE)
-   [![license](https://img.shields.io/github/license/bipinKrishnan/automax)](https://github.com/bipinKrishnan/centroid/blob/main/LICENSE)
-   [![license](https://img.shields.io/github/license/bipinKrishnan/automax)](https://github.com/bipinKrishnan/centroid/blob/main/LICENSE)
-   
+
    
 </div>
 
