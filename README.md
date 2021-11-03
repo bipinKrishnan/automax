@@ -8,9 +8,8 @@
  
 <p align="center">
    <a href="https://github.com/bipinKrishnan/centroid/#why-automax">Why Automax🤔</a> |
-   <a href="https://github.com/bipinKrishnan/centroid/#quickstart">Quickstart🚀</a> |
-   <a href="https://github.com/bipinKrishnan/centroid/#">Tutorials🧑‍🏫</a> |
-   <a href="https://github.com/bipinKrishnan/centroid/#">Forums💬</a>
+   <a href="https://github.com/bipinKrishnan/centroid/#quickstart">Quickstart🚀</a>
+
 </p>
 
    [![license](https://img.shields.io/github/license/bipinKrishnan/automax)](https://github.com/bipinKrishnan/centroid/blob/main/LICENSE)
