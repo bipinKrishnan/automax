@@ -7,8 +7,8 @@
 **If it can be automated, assign it to a button**
  
 <p align="center">
-   <a href="https://github.com/bipinKrishnan/centroid/#why-automax">Why Automax🤔</a> |
-   <a href="https://github.com/bipinKrishnan/centroid/#quickstart">Quickstart🚀</a>
+   <a href="https://github.com/bipinKrishnan/centroid/#why-automax-">Why Automax🤔</a> |
+   <a href="https://github.com/bipinKrishnan/centroid/#quickstart-">Quickstart🚀</a>
 
 </p>
 
